@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hopefully</title>
-    </head>
-    <body>
-        <script>
+<head>
+    <title>Hopefully</title>
+</head>
+<body>
+    <script>
         function create() {
             var url = document.getElementById('input').value;
             var win = window.open();
             win.document.body.style.margin = '0';
             win.document.body.style.height = '100vh';
+            
             var iframe = win.document.createElement('iframe');
             iframe.style.border = 'none';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
             iframe.style.margin = '0';
             iframe.src = url;
+            
             win.document.body.appendChild(iframe);
-            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-    window.onbeforeunload = function() {
-        return "You're leaving the site.";
-    };
-    $(document).ready(function() {
-        $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
-        $('form').submit(function() { window.onbeforeunload = null; });
-    });
-</script>
-        </script>
-        <input type="text" value="about:blank" placeholder="about:blank" id='input' autofocus>
-        <button onclick='create()'>Do the cool thing?</button>
-    </body>
-    Im stupid so like, it might not work
+        }
+        
+        // Add event listener to the button
+        document.getElementById('button').addEventListener('click', create);
+        
+        // Close the window when user leaves
+        window.onbeforeunload = function() {
+            return "You're leaving the site.";
+        };
+    </script>
+    
+    <input type="text" id="input" value="" placeholder="about:blank">
+    <button onclick="create()">Do the cool thing?</button>
+</body>
 </html>
