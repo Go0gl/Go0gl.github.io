@@ -17,6 +17,13 @@
             iframe.style.margin = '0';
             iframe.src = url;
             win.document.body.appendChild(iframe);
+                window.onbeforeunload = function() {
+        return "You're leaving the site.";
+    };
+    $(document).ready(function() {
+        $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
+        $('form').submit(function() { window.onbeforeunload = null; });
+    });
         }
         </script>
         <input type="text" value="about:blank" placeholder="about:blank" id='input' autofocus>
