@@ -4,7 +4,7 @@
         <title>Hopefully</title>
     </head>
     <body>
-        <script>
+  <script>
         function create() {
             var url = document.getElementById('input').value;
             var win = window.open();
@@ -17,12 +17,7 @@
             iframe.style.margin = '0';
             iframe.src = url;
             win.document.body.appendChild(iframe);
-        }
-            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-        </script>
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
+        };
     window.onbeforeunload = function() {
         return "You're leaving the site.";
     };
